@@ -7,6 +7,7 @@ package Form;
 
 import Define.User;
 import Service.UserService;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -105,9 +106,19 @@ public class SignUp extends javax.swing.JFrame {
         jLabel1.setText("Thêm mới người dùng");
 
         gioithieu.setColumns(20);
-        gioithieu.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        gioithieu.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        gioithieu.setForeground(new java.awt.Color(153, 153, 153));
         gioithieu.setLineWrap(true);
         gioithieu.setRows(5);
+        gioithieu.setText("Tính cách,điểm mạnh,yếu,...");
+        gioithieu.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                gioithieuFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                gioithieuFocusLost(evt);
+            }
+        });
         jScrollPane1.setViewportView(gioithieu);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -282,6 +293,22 @@ public class SignUp extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Bạn chưa xác nhận", "Hãy xác nhận", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_AddtoListActionPerformed
+
+    private void gioithieuFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_gioithieuFocusGained
+        if (gioithieu.getText().equals("Tính cách,điểm mạnh,yếu,..."))
+        {
+            gioithieu.setText ("");
+            gioithieu.setForeground (new Color (0,0,0));
+        }
+    }//GEN-LAST:event_gioithieuFocusGained
+
+    private void gioithieuFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_gioithieuFocusLost
+        if (gioithieu.getText().equals(""))
+        {
+            gioithieu.setText ("Tính cách,điểm mạnh,yếu,...");
+            gioithieu.setForeground (new Color (153,153,153));
+        }
+    }//GEN-LAST:event_gioithieuFocusLost
 
     /**
      * @param args the command line arguments

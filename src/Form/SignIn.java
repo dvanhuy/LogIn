@@ -81,6 +81,7 @@ public class SignIn extends javax.swing.JFrame {
 
         turnonoff.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         turnonoff.setText("H");
+        turnonoff.setToolTipText("Hiện/ẩn mật khẩu");
         turnonoff.setAlignmentY(0.0F);
         turnonoff.setAutoscrolls(true);
         turnonoff.setIconTextGap(0);
